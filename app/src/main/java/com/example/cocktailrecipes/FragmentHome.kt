@@ -31,7 +31,6 @@ class FragmentHome :Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
         getAlcoholicDrinks()
-        Log.i("test","run")
     }
 
     private fun getAlcoholicDrinks() {
@@ -49,11 +48,11 @@ class FragmentHome :Fragment(){
     }
 
     fun showDataInRecyclerView(data : List<category.Drink>){
-        val drinkAdapter = CategoryAdapter(ArrayList(data))
+        val drinkAdapter = CategoryAdapter(data)
         Log.i("test-adapter",data.toString())
         binding.drinkRecyclerView.adapter = drinkAdapter
 //        binding.drinkRecyclerView.layoutManager = LinearLayoutManager(this.requireActivity(),LinearLayoutManager.HORIZONTAL,false)
-        binding.drinkRecyclerView.layoutManager = GridLayoutManager(this.requireActivity(),3)
+        binding.drinkRecyclerView.layoutManager = GridLayoutManager(this.requireActivity(),2)
 
     }
 
