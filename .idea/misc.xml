@@ -5,14 +5,21 @@
       <map>
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/drawable/bacground_coctail_detail.xml" value="0.274" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/drawable/background_cocktail_detail.xml" value="0.3255" />
+        <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/drawable/background_drink_details.xml" value="0.3025" />
+        <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/drawable/background_home.xml" value="0.337" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/drawable/fragment_home_selector.xml" value="0.337" />
+        <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/drawable/ic_zoo1_01.xml" value="0.2795" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/drawable/trapezoid.xml" value="0.337" />
+        <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/font/bilbo_swash_caps.xml" value="0.20277777777777778" />
+        <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/font/lobster.xml" value="0.324537037037037" />
+        <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/activity_cocktail_detail.xml" value="0.2" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/activity_main.xml" value="0.21" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/fragment_cocktail.xml" value="0.25" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/fragment_cocktail_detail.xml" value="0.33" />
-        <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/fragment_home.xml" value="0.44211287988422576" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/module_collapsing_bar.xml" value="0.25" />
-        <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/template_recycler_view_category.xml" value="0.33" />
+        <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/module_drink_details.xml" value="0.29768518518518516" />
+        <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/template_recycler_view_category.xml" value="0.5" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/template_recycler_view_ingredients.xml" value="0.5" />
       </map>
     </option>

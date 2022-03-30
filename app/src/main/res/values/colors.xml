@@ -13,5 +13,7 @@
     <color name="grey_regular">#787878</color>
     <color name="purple">#301830</color>
     <color name="yellow">#D8C060</color>
+    <color name="yellow_home_selector">#FFDD67</color>
+    <color name="grey_dark_transparent">#20202c</color>
 
 </resources>
