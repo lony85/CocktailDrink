@@ -20,8 +20,14 @@ class ApiManager {
         apiService = retrofit.create(ApiService::class.java)
     }
 
-    fun getAlcoholicDrinks(apiCallback: ApiCallback<List<category.Drink>>,a:String) {
-        apiService.getAlcoholicData("filter.php", a).enqueue(object : Callback<category> {
+    //Api Samples
+    //www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
+    //www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007
+    //www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic
+    //www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic
+
+    fun getAlcoholicDrinks(apiCallback: ApiCallback<List<category.Drink>>,filter:String,a:String) {
+        apiService.getAlcoholicData(filter, a).enqueue(object : Callback<category> {
             override fun onResponse(call: Call<category>, response: Response<category>) {
                 val data = response.body()
                 apiCallback.onSuccess(data!!.drinks)
@@ -47,7 +53,6 @@ class ApiManager {
         })
 
     }
-
     interface ApiCallback<T> {
         fun onSuccess(data: T)
         fun onError(errorMessage: String)

@@ -56,7 +56,7 @@ class FragmentHome : Fragment(), CategoryAdapter.RecyclerCallBack {
             override fun onError(errorMessage: String) {
                 Toast.makeText(activity, errorMessage, Toast.LENGTH_SHORT).show()
             }
-        },"Alcoholic")
+        },"filter.php","Alcoholic")
     }
     private fun getNonAlcoholicDrinks() {
         apiManager.getAlcoholicDrinks(object : ApiManager.ApiCallback<List<category.Drink>> {
@@ -68,7 +68,7 @@ class FragmentHome : Fragment(), CategoryAdapter.RecyclerCallBack {
             override fun onError(errorMessage: String) {
                 Toast.makeText(activity, errorMessage, Toast.LENGTH_SHORT).show()
             }
-        },"Non_Alcoholic")
+        },"filter.php","Non_Alcoholic")
     }
 
     fun showDataInRecyclerView(data: List<category.Drink>) {

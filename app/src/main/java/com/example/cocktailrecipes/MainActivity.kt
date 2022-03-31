@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.core.content.ContextCompat
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.cocktailrecipes.databinding.ActivityMainBinding
 import com.example.cocktailrecipes.databinding.FragmentHomeBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -14,9 +17,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.fragmentContainer,FragmentHome())
-        transaction.commit()
+        //Bottom Navigation Controller
+        val navView : BottomNavigationView = binding.navView
+        val navController = findNavController(R.id.fragmentContainer)
+        navView.setupWithNavController(navController)
+
+        binding.navView.setOnItemReselectedListener { }  //Leave it - Empty tag
 
 //        binding.collapsingBarMain.collapsingToolbar.title = "Passion fruit \nMojito" // set toolbar names
 //        binding.collapsingBarMain.collapsingToolbar.setCollapsedTitleTextColor(ContextCompat.getColor(this,R.color.white))
