@@ -20,174 +20,78 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
 
-<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content">-->
 
-<!--        <com.google.android.material.card.MaterialCardView-->
-<!--            android:id="@+id/materialCardView2"-->
-<!--            android:layout_width="150dp"-->
-<!--            android:layout_height="150dp"-->
-<!--            app:cardCornerRadius="20dp"-->
-<!--            android:backgroundTint="@color/grey_dark"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toStartOf="@+id/materialCardView"-->
-<!--            app:layout_constraintHorizontal_bias="0.5"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent">-->
-
-<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                >-->
-
-<!--                <ImageView-->
-
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:adjustViewBounds="true"-->
-<!--                    android:scaleType="centerCrop"-->
-<!--                    android:src="@drawable/non_alcoholic"-->
-<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="10dp"-->
-<!--                    android:layout_marginTop="10dp"-->
-<!--                    android:fontFamily="@font/sf_pro_rounded_semi_bold"-->
-<!--                    android:text="Non \nAlcoholic"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent"-->
-<!--                    tools:ignore="HardcodedText" />-->
-
-
-<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent">-->
-
-<!--                <ImageView-->
-
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:adjustViewBounds="true"-->
-<!--                    android:scaleType="centerCrop"-->
-<!--                    android:src="@drawable/alcoholic"-->
-<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="46dp"-->
-<!--                    android:layout_marginStart="10dp"-->
-<!--                    android:layout_marginTop="10dp"-->
-<!--                    android:gravity="center"-->
-<!--                    android:fontFamily="@font/sf_pro_rounded_semi_bold"-->
-<!--                    android:text="Alcoholic"-->
-<!--                    android:textColor="@color/white"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent"-->
-<!--                    tools:ignore="HardcodedText" />-->
-
-
-<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-
-<!--        </com.google.android.material.card.MaterialCardView>-->
-
-<!--        <com.google.android.material.card.MaterialCardView-->
-<!--            android:id="@+id/materialCardView"-->
-<!--            android:layout_width="150dp"-->
-<!--            android:layout_height="150dp"-->
-<!--            app:cardCornerRadius="20dp"-->
-<!--            android:backgroundTint="@color/grey_dark"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.5"-->
-<!--            app:layout_constraintStart_toEndOf="@+id/materialCardView2"-->
-<!--            app:layout_constraintTop_toTopOf="parent">-->
-
-<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                >-->
-
-<!--                <ImageView-->
-
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:adjustViewBounds="true"-->
-<!--                    android:scaleType="centerCrop"-->
-<!--                    android:src="@drawable/non_alcoholic"-->
-<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="10dp"-->
-<!--                    android:layout_marginTop="10dp"-->
-<!--                    android:fontFamily="@font/sf_pro_rounded_semi_bold"-->
-<!--                    android:text="Non \nAlcoholic"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent"-->
-<!--                    tools:ignore="HardcodedText" />-->
-
-
-<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-<!--        </com.google.android.material.card.MaterialCardView>-->
-<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/nonAlcoholBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="110dp"
+        android:layout_height="170dp"
         android:layout_marginStart="-25dp"
         android:layout_marginTop="380dp"
         android:backgroundTint="@color/grey_dark_transparent"
         android:background="@drawable/ic_zoo1_01"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" >
+
         <ImageView
+            android:id="@+id/imageView2"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="35dp"
             android:src="@drawable/ic_non_alcohol"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="ContentDescription" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:gravity="center"
+            android:text="Non\nAlcoholic"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-    </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/alcoholBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="110dp"
+        android:layout_height="170dp"
         android:layout_marginStart="-25dp"
         android:layout_marginTop="250dp"
         android:background="@drawable/ic_zoo1_01"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" >
+
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="35dp"
             android:src="@drawable/ic_alcohol"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="ContentDescription" />
 
-    </FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Alcoholic"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/drinkRecyclerView"

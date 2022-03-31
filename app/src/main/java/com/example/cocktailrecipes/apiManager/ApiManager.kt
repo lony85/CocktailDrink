@@ -20,8 +20,8 @@ class ApiManager {
         apiService = retrofit.create(ApiService::class.java)
     }
 
-    fun getAlcoholicDrinks(apiCallback: ApiCallback<List<category.Drink>>) {
-        apiService.getAlcoholicData("filter.php", "Alcoholic").enqueue(object : Callback<category> {
+    fun getAlcoholicDrinks(apiCallback: ApiCallback<List<category.Drink>>,a:String) {
+        apiService.getAlcoholicData("filter.php", a).enqueue(object : Callback<category> {
             override fun onResponse(call: Call<category>, response: Response<category>) {
                 val data = response.body()
                 apiCallback.onSuccess(data!!.drinks)

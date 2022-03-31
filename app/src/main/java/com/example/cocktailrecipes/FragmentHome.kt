@@ -34,10 +34,12 @@ class FragmentHome : Fragment(), CategoryAdapter.RecyclerCallBack {
         getAlcoholicDrinks()
 
         binding.alcoholBtn.setOnClickListener {
+            getAlcoholicDrinks()
             binding.alcoholBtn.backgroundTintList = AppCompatResources.getColorStateList(this.requireActivity(), R.color.yellow_home_selector)
             binding.nonAlcoholBtn.backgroundTintList = AppCompatResources.getColorStateList(this.requireActivity(), R.color.grey_dark_transparent)
         }
         binding.nonAlcoholBtn.setOnClickListener {
+            getNonAlcoholicDrinks()
             binding.alcoholBtn.backgroundTintList = AppCompatResources.getColorStateList(this.requireActivity(), R.color.grey_dark_transparent)
             binding.nonAlcoholBtn.backgroundTintList = AppCompatResources.getColorStateList(this.requireActivity(), R.color.yellow_home_selector)
         }
@@ -54,7 +56,19 @@ class FragmentHome : Fragment(), CategoryAdapter.RecyclerCallBack {
             override fun onError(errorMessage: String) {
                 Toast.makeText(activity, errorMessage, Toast.LENGTH_SHORT).show()
             }
-        })
+        },"Alcoholic")
+    }
+    private fun getNonAlcoholicDrinks() {
+        apiManager.getAlcoholicDrinks(object : ApiManager.ApiCallback<List<category.Drink>> {
+            override fun onSuccess(data: List<category.Drink>) {
+                showDataInRecyclerView(data)
+                Log.i("test12",data.toString())
+            }
+
+            override fun onError(errorMessage: String) {
+                Toast.makeText(activity, errorMessage, Toast.LENGTH_SHORT).show()
+            }
+        },"Non_Alcoholic")
     }
 
     fun showDataInRecyclerView(data: List<category.Drink>) {
