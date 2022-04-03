@@ -15,7 +15,7 @@
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/drawable/trapezoid.xml" value="0.337" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/font/bilbo_swash_caps.xml" value="0.20277777777777778" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/font/lobster.xml" value="0.324537037037037" />
-        <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/activity_cocktail_detail.xml" value="0.2" />
+        <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/activity_cocktail_detail.xml" value="0.25" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/fragment_cocktail.xml" value="0.25" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/fragment_cocktail_detail.xml" value="0.33" />
@@ -38,7 +38,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.5" />
+        <option name="scale" value="0.12" />
       </ProjectState>
     </option>
   </component>
