@@ -14,15 +14,22 @@ interface ApiService {
 
     @GET("{filter}")
     fun getAlcoholicData(
-        @Path("filter") filter : String,
-        @Query("a")a:String
-    ):Call<category>
+        @Path("filter") filter: String,
+        @Query("a") a: String
+    ): Call<category>
 
     //www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007
     @GET("{filter}")
     fun getDrinkDetails(
         @Path("filter") filter: String,
-        @Query("i") i:String
-    ):Call<DrinkDetails>
+        @Query("i") i: String
+    ): Call<DrinkDetails>
+
+    //www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
+    @GET("{filter}")
+    fun getSearchedDrink(
+        @Path("filter") filter: String,
+        @Query("s") s: String
+    ): Call<DrinkDetails>
 
 }

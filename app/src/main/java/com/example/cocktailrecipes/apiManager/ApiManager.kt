@@ -26,8 +26,8 @@ class ApiManager {
     //www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic
     //www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic
 
-    fun getAlcoholicDrinks(apiCallback: ApiCallback<List<category.Drink>>,filter:String,a:String) {
-        apiService.getAlcoholicData(filter, a).enqueue(object : Callback<category> {
+    fun getAlcoholicDrinks(apiCallback: ApiCallback<List<category.Drink>>,a:String) {
+        apiService.getAlcoholicData("filter.php", a).enqueue(object : Callback<category> {
             override fun onResponse(call: Call<category>, response: Response<category>) {
                 val data = response.body()
                 apiCallback.onSuccess(data!!.drinks)
@@ -52,6 +52,19 @@ class ApiManager {
 
         })
 
+    }
+    fun searchDrink(apiCallback: ApiCallback<List<DrinkDetails.Drink?>?>,s:String){
+        apiService.getSearchedDrink("search.php", s).enqueue(object : Callback<DrinkDetails> {
+            override fun onResponse(call: Call<DrinkDetails>, response: Response<DrinkDetails>) {
+                val data = response.body()
+                apiCallback.onSuccess(data!!.drinks)
+            }
+
+            override fun onFailure(call: Call<DrinkDetails>, t: Throwable) {
+                Log.i("drinkDetailserror", t.message!!)
+            }
+
+        })
     }
     interface ApiCallback<T> {
         fun onSuccess(data: T)
