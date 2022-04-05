@@ -13,8 +13,11 @@
     <color name="grey_regular">#787878</color>
     <color name="purple">#301830</color>
     <color name="yellow">#D8C060</color>
-    <color name="yellow_home_selector">#FFDD67</color>
+    <color name="yellow_primary">#FFDD67</color>
+    <color name="yellow_transparent">#9EFFDD67</color>
     <color name="grey_dark_transparent">#39394A</color>
+    <color name="red">#E8131F</color>
+
     <color  name="mtrl_textinput_default_box_stroke_color">#FFDD67</color>
 
 </resources>

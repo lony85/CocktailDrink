@@ -11,6 +11,11 @@
         android:label="Home"
         tools:layout="@layout/fragment_home"/>
 
+    <fragment
+        android:id="@+id/navigation_favorites"
+        android:name="com.example.cocktailrecipes.FragmentFavorites"
+        android:label="Favorites"
+        tools:layout="@layout/fragment_favorites"/>
 
     <fragment
         android:id="@+id/navigation_search"

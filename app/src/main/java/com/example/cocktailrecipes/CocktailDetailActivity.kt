@@ -1,38 +1,39 @@
 package com.example.cocktailrecipes
 
 import android.annotation.SuppressLint
+import android.content.res.ColorStateList
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.example.cocktailrecipes.apiManager.ApiManager
 import com.example.cocktailrecipes.apiManager.model.DrinkDetails
-import com.example.cocktailrecipes.apiManager.model.category
 import com.example.cocktailrecipes.databinding.ActivityCocktailDetailBinding
+import com.example.cocktailrecipes.roomDb.AppDatabase
+import com.example.cocktailrecipes.roomDb.FavoriteDrinks
+import com.example.cocktailrecipes.roomDb.FavoritesDao
 
 class CocktailDetailActivity : AppCompatActivity() {
+    lateinit var favoritesDao: FavoritesDao
     private val apiManager = ApiManager()
     lateinit var binding: ActivityCocktailDetailBinding
     private lateinit var cocktailId: String
+    private lateinit var drinkName: String
+    lateinit var drinkImg: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCocktailDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val cocktailHome = intent.getStringExtra("dataToSend")
-        val searchedCocktail = intent.getStringExtra("searchItem")
-
-        if (searchedCocktail != null) {
-            cocktailId = searchedCocktail
-        } else if (cocktailHome != null) {
-            cocktailId = cocktailHome
-        }
+        //get Intent String
+        cocktailId = intent.getStringExtra("dataToSend").toString()
 
         initCollapsingBarModule()
         initDrinkDetailsModule()
+        initFavoriteFabButton(cocktailId)
 
         // Toolbar
         setSupportActionBar(binding.moduleCollapsingToolbar.toolbar)
@@ -66,7 +67,6 @@ class CocktailDetailActivity : AppCompatActivity() {
         val drinkId = cocktailId
         apiManager.getDrinkDetail(object : ApiManager.ApiCallback<List<DrinkDetails.Drink?>?> {
             override fun onSuccess(data: List<DrinkDetails.Drink?>?) {
-                Log.i("drinkDetails", data.toString())
                 bindDrinkData(data)
             }
 
@@ -84,6 +84,9 @@ class CocktailDetailActivity : AppCompatActivity() {
             Glide.with(binding.root)
                 .load(it!!.strDrinkThumb)
                 .into(binding.moduleCollapsingToolbar.collapsingToolbarImage)
+
+            drinkName = it.strDrink.toString()
+            drinkImg = it.strDrinkThumb.toString()
 
             binding.moduleCollapsingToolbar.collapsingToolbar.title = it.strDrink
             binding.moduleDrinkDetails.txtGlassType.text = it.strGlass
@@ -152,6 +155,84 @@ class CocktailDetailActivity : AppCompatActivity() {
             }
 
             binding.moduleDrinkDetails.txtIngredientNo.text = "$ingredientNo items"
+        }
+    }
+
+    private fun initFavoriteFabButton(cocktailId: String){
+
+        favoritesDao = AppDatabase.getInstance(this).favoritesDao
+
+        val appDatabase = favoritesDao.getAllData()
+        appDatabase.forEach {
+            if (it.drinkId == cocktailId) {
+                binding.fabFavoriteBtn.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        this,
+                        R.drawable.ic_favorite
+                    )
+                )
+                binding.fabFavoriteBtn.imageTintList = ColorStateList.valueOf(getColor(R.color.red))
+            } else if (it.drinkId != cocktailId) {
+                binding.fabFavoriteBtn.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        this,
+                        R.drawable.ic_favorite_border
+                    )
+                )
+                binding.fabFavoriteBtn.imageTintList = ColorStateList.valueOf(getColor(R.color.purple))
+            }
+        }
+        binding.fabFavoriteBtn.setOnClickListener {
+            val appDatabase = favoritesDao.getAllData()
+            if (appDatabase.isEmpty()) {    //Empty Database
+
+                binding.fabFavoriteBtn.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        this,
+                        R.drawable.ic_favorite
+                    )
+                )
+                binding.fabFavoriteBtn.imageTintList = ColorStateList.valueOf(getColor(R.color.red))
+
+                favoritesDao.insert(
+                    FavoriteDrinks(
+                        drinkId = cocktailId,
+                        drinkName = drinkName,
+                        drinkImg = drinkImg
+                    )
+                )
+            } else if (appDatabase.isNotEmpty()) {  //Not Empty Database
+                appDatabase.forEach {
+                    if (it.drinkId == cocktailId ) {
+                        binding.fabFavoriteBtn.imageTintList = ColorStateList.valueOf(getColor(R.color.red))
+                        binding.fabFavoriteBtn.setImageDrawable(
+                            ContextCompat.getDrawable(
+                                this,
+                                R.drawable.ic_favorite_border
+                            )
+                        )
+                        binding.fabFavoriteBtn.imageTintList = ColorStateList.valueOf(getColor(R.color.purple))
+                        favoritesDao.deleteByDrinkName(drinkName)
+
+                    } else if (it.drinkId != cocktailId) {
+                        binding.fabFavoriteBtn.setImageDrawable(
+                            ContextCompat.getDrawable(
+                                this,
+                                R.drawable.ic_favorite
+                            )
+                        )
+                        binding.fabFavoriteBtn.imageTintList =
+                            ColorStateList.valueOf(getColor(R.color.red))
+                        favoritesDao.insert(
+                            FavoriteDrinks(
+                                drinkId = cocktailId,
+                                drinkName = drinkName,
+                                drinkImg = drinkImg
+                            )
+                        )
+                    }
+                }
+            }
         }
     }
 }

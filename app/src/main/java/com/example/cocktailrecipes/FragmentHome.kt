@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.cocktailrecipes.adapter.CategoryAdapter
@@ -35,13 +34,13 @@ class FragmentHome : Fragment(), CategoryAdapter.RecyclerCallBack {
 
         binding.alcoholBtn.setOnClickListener {
             getAlcoholicDrinks()
-            binding.alcoholBtn.backgroundTintList = AppCompatResources.getColorStateList(this.requireActivity(), R.color.yellow_home_selector)
+            binding.alcoholBtn.backgroundTintList = AppCompatResources.getColorStateList(this.requireActivity(), R.color.yellow_primary)
             binding.nonAlcoholBtn.backgroundTintList = AppCompatResources.getColorStateList(this.requireActivity(), R.color.grey_dark_transparent)
         }
         binding.nonAlcoholBtn.setOnClickListener {
             getNonAlcoholicDrinks()
             binding.alcoholBtn.backgroundTintList = AppCompatResources.getColorStateList(this.requireActivity(), R.color.grey_dark_transparent)
-            binding.nonAlcoholBtn.backgroundTintList = AppCompatResources.getColorStateList(this.requireActivity(), R.color.yellow_home_selector)
+            binding.nonAlcoholBtn.backgroundTintList = AppCompatResources.getColorStateList(this.requireActivity(), R.color.yellow_primary)
         }
 
     }

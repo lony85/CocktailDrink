@@ -31,11 +31,15 @@
     </androidx.core.widget.NestedScrollView>
 
 <com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/fabFavoriteBtn"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     app:layout_anchor="@id/moduleCollapsingToolbar"
     app:layout_anchorGravity="bottom|end"
     app:useCompatPadding="true"
-    tools:ignore="ContentDescription" />
+    app:backgroundTint="@color/yellow_transparent"
+    android:src="@drawable/ic_favorite_border"
+    tools:ignore="ContentDescription"
+    />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

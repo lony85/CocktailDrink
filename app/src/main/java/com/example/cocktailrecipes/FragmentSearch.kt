@@ -73,7 +73,7 @@ class FragmentSearch : Fragment() , SearchAdapter.RecyclerCallBack{
 
     override fun onItemClickListener(itemClicked: DrinkDetails.Drink) {
         val intent = Intent(this.requireActivity(), CocktailDetailActivity::class.java)
-        intent.putExtra("searchItem",itemClicked.idDrink)
+        intent.putExtra("dataToSend",itemClicked.idDrink)
         startActivity(intent)
     }
 }
