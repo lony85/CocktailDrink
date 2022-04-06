@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.res.ColorStateList
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.core.content.ContextCompat
@@ -14,6 +15,7 @@ import com.example.cocktailrecipes.databinding.ActivityCocktailDetailBinding
 import com.example.cocktailrecipes.roomDb.AppDatabase
 import com.example.cocktailrecipes.roomDb.FavoriteDrinks
 import com.example.cocktailrecipes.roomDb.FavoritesDao
+import java.text.BreakIterator
 
 class CocktailDetailActivity : AppCompatActivity() {
     lateinit var favoritesDao: FavoritesDao
@@ -34,6 +36,7 @@ class CocktailDetailActivity : AppCompatActivity() {
         initCollapsingBarModule()
         initDrinkDetailsModule()
         initFavoriteFabButton(cocktailId)
+
 
         // Toolbar
         setSupportActionBar(binding.moduleCollapsingToolbar.toolbar)
@@ -158,34 +161,34 @@ class CocktailDetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun initFavoriteFabButton(cocktailId: String){
+    private fun initFavoriteFabButton(cocktailId: String) {
 
         favoritesDao = AppDatabase.getInstance(this).favoritesDao
 
         val appDatabase = favoritesDao.getAllData()
-        appDatabase.forEach {
-            if (it.drinkId == cocktailId) {
-                binding.fabFavoriteBtn.setImageDrawable(
-                    ContextCompat.getDrawable(
-                        this,
-                        R.drawable.ic_favorite
-                    )
+        if (appDatabase.toString().contains(cocktailId)) {
+            binding.fabFavoriteBtn.setImageDrawable(
+                ContextCompat.getDrawable(
+                    this,
+                    R.drawable.ic_favorite
                 )
-                binding.fabFavoriteBtn.imageTintList = ColorStateList.valueOf(getColor(R.color.red))
-            } else if (it.drinkId != cocktailId) {
-                binding.fabFavoriteBtn.setImageDrawable(
-                    ContextCompat.getDrawable(
-                        this,
-                        R.drawable.ic_favorite_border
-                    )
+            )
+            binding.fabFavoriteBtn.imageTintList = ColorStateList.valueOf(getColor(R.color.red))
+        } else {
+            binding.fabFavoriteBtn.setImageDrawable(
+                ContextCompat.getDrawable(
+                    this,
+                    R.drawable.ic_favorite_border
                 )
-                binding.fabFavoriteBtn.imageTintList = ColorStateList.valueOf(getColor(R.color.purple))
-            }
+            )
+            binding.fabFavoriteBtn.imageTintList = ColorStateList.valueOf(getColor(R.color.purple))
+
         }
+
         binding.fabFavoriteBtn.setOnClickListener {
             val appDatabase = favoritesDao.getAllData()
             if (appDatabase.isEmpty()) {    //Empty Database
-
+                Log.i("database-d", "empty database")
                 binding.fabFavoriteBtn.setImageDrawable(
                     ContextCompat.getDrawable(
                         this,
@@ -202,37 +205,43 @@ class CocktailDetailActivity : AppCompatActivity() {
                     )
                 )
             } else if (appDatabase.isNotEmpty()) {  //Not Empty Database
-                appDatabase.forEach {
-                    if (it.drinkId == cocktailId ) {
-                        binding.fabFavoriteBtn.imageTintList = ColorStateList.valueOf(getColor(R.color.red))
-                        binding.fabFavoriteBtn.setImageDrawable(
-                            ContextCompat.getDrawable(
-                                this,
-                                R.drawable.ic_favorite_border
-                            )
+                Log.i("database-d", "NOT empty database")
+                if (appDatabase.toString().contains(cocktailId)) {
+                    Log.i("database-d", "drinkId == cocktailId")
+                    binding.fabFavoriteBtn.imageTintList =
+                        ColorStateList.valueOf(getColor(R.color.red))
+                    binding.fabFavoriteBtn.setImageDrawable(
+                        ContextCompat.getDrawable(
+                            this,
+                            R.drawable.ic_favorite_border
                         )
-                        binding.fabFavoriteBtn.imageTintList = ColorStateList.valueOf(getColor(R.color.purple))
-                        favoritesDao.deleteByDrinkName(drinkName)
+                    )
+                    binding.fabFavoriteBtn.imageTintList =
+                        ColorStateList.valueOf(getColor(R.color.purple))
+                    favoritesDao.deleteByDrinkName(drinkName)
 
-                    } else if (it.drinkId != cocktailId) {
-                        binding.fabFavoriteBtn.setImageDrawable(
-                            ContextCompat.getDrawable(
-                                this,
-                                R.drawable.ic_favorite
-                            )
+                } else {
+                    Log.i("database-d", "drinkId ! = cocktailId")
+                    binding.fabFavoriteBtn.setImageDrawable(
+                        ContextCompat.getDrawable(
+                            this,
+                            R.drawable.ic_favorite
                         )
-                        binding.fabFavoriteBtn.imageTintList =
-                            ColorStateList.valueOf(getColor(R.color.red))
-                        favoritesDao.insert(
-                            FavoriteDrinks(
-                                drinkId = cocktailId,
-                                drinkName = drinkName,
-                                drinkImg = drinkImg
-                            )
+                    )
+                    binding.fabFavoriteBtn.imageTintList =
+                        ColorStateList.valueOf(getColor(R.color.red))
+                    favoritesDao.insert(
+                        FavoriteDrinks(
+                            drinkId = cocktailId,
+                            drinkName = drinkName,
+                            drinkImg = drinkImg
                         )
-                    }
+                    )
+
+
                 }
             }
         }
+
     }
 }

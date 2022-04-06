@@ -19,7 +19,7 @@
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/font/bilbo_swash_caps.xml" value="0.20277777777777778" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/font/lobster.xml" value="0.324537037037037" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/activity_cocktail_detail.xml" value="0.29506172839506173" />
-        <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/fragment_cocktail.xml" value="0.25" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/fragment_cocktail_detail.xml" value="0.33" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/fragment_favorites.xml" value="0.29768518518518516" />
@@ -27,7 +27,7 @@
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/fragment_search.xml" value="0.12" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/module_collapsing_bar.xml" value="0.25" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/module_drink_details.xml" value="0.29768518518518516" />
-        <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/template_recycler_view_category.xml" value="0.22" />
+        <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/template_recycler_view_category.xml" value="0.75" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/template_recycler_view_ingredients.xml" value="0.5" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
       </map>
