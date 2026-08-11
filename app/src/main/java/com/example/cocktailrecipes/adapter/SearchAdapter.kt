@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.cocktailrecipes.apiManager.model.DrinkDetails
-import com.example.cocktailrecipes.apiManager.model.category
 import com.example.cocktailrecipes.databinding.TemplateRecyclerViewCategoryBinding
 
 class SearchAdapter(private val data: List<DrinkDetails.Drink?>?, val recyclerCallBack:RecyclerCallBack) : RecyclerView.Adapter<SearchAdapter.Holder>() {

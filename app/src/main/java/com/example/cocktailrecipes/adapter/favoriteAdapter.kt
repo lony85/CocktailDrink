@@ -9,7 +9,8 @@ import com.example.cocktailrecipes.apiManager.model.category
 import com.example.cocktailrecipes.databinding.TemplateRecyclerViewCategoryBinding
 import com.example.cocktailrecipes.roomDb.FavoriteDrinks
 
-class favoriteAdapter(private val data: List<FavoriteDrinks>, val recyclerCallBack:RecyclerCallBack) : RecyclerView.Adapter<favoriteAdapter.Holder>() {
+class favoriteAdapter(private val data: List<FavoriteDrinks>, val recyclerCallBack:RecyclerCallBack) :
+    RecyclerView.Adapter<favoriteAdapter.Holder>() {
 
     inner class Holder(private val binding: TemplateRecyclerViewCategoryBinding) :  RecyclerView.ViewHolder(binding.root) {
 

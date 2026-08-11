@@ -20,12 +20,12 @@
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/font/lobster.xml" value="0.324537037037037" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/activity_cocktail_detail.xml" value="0.29506172839506173" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/activity_splash_screen.xml" value="0.22" />
+        <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/activity_splash_screen.xml" value="0.67" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/fragment_cocktail.xml" value="0.25" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/fragment_cocktail_detail.xml" value="0.33" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/fragment_favorites.xml" value="0.29768518518518516" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/fragment_home.xml" value="0.3947206875383671" />
-        <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/fragment_search.xml" value="0.12" />
+        <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/fragment_search.xml" value="0.22" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/module_collapsing_bar.xml" value="0.25" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/module_drink_details.xml" value="0.29768518518518516" />
         <entry key="..\:/AndroidProjects/CocktailRecipes/app/src/main/res/layout/template_recycler_view_category.xml" value="0.75" />
@@ -34,7 +34,8 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

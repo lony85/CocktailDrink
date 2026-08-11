@@ -2,18 +2,13 @@ package com.example.cocktailrecipes
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.GridLayout
-import android.widget.Toast
-import androidx.core.view.isEmpty
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.cocktailrecipes.adapter.CategoryAdapter
 import com.example.cocktailrecipes.adapter.SearchAdapter
 import com.example.cocktailrecipes.apiManager.ApiManager
 import com.example.cocktailrecipes.apiManager.model.DrinkDetails

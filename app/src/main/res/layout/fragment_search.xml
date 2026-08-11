@@ -22,9 +22,10 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editText"
-            android:textColor="?attr/colorPrimary"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:singleLine="true"
+            android:textColor="?attr/colorPrimary" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

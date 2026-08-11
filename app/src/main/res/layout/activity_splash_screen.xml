@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:fontFamily="@font/bilbo_swash_caps_regular"
-        android:text="A.K."
+        android:text="Farnaz"
         android:textColor="@color/white"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="@+id/lottieAnimationView"

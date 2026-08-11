@@ -15,7 +15,6 @@ import com.example.cocktailrecipes.databinding.ActivityCocktailDetailBinding
 import com.example.cocktailrecipes.roomDb.AppDatabase
 import com.example.cocktailrecipes.roomDb.FavoriteDrinks
 import com.example.cocktailrecipes.roomDb.FavoritesDao
-import java.text.BreakIterator
 
 class CocktailDetailActivity : AppCompatActivity() {
     lateinit var favoritesDao: FavoritesDao
